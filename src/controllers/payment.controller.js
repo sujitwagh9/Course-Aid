@@ -1,6 +1,6 @@
 import Razorpay from 'razorpay';
 import crypto from 'crypto';
-
+import 'dotenv/config'
 
 
 const razorpay = new Razorpay({
