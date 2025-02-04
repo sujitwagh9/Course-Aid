@@ -13,9 +13,9 @@ const isTokenExpired = (token) => {
     try {
       const decoded = jwt.decode(token);  
       if (!decoded || !decoded.exp) {
-        return true;  // Token has no expiry or is invalid
+        return true; 
       }
-      return decoded.exp * 1000 < Date.now();  // Check expiry
+      return decoded.exp * 1000 < Date.now(); 
     } catch (error) {
       return true;  // Invalid token or other error
     }
@@ -290,5 +290,15 @@ const resetPassword = async (req, res, next) => {
   }
 };
 
+const logoutUser = async (req, res, next) => {
+  const { refreshToken } = req.body;
 
-export { registerUser, loginUser, refreshAccessToken, forgotPassword, resetPassword, verifyEmail};
+  if (!refreshToken) {
+    return next(new ApiError(400, "Refresh token is required"));
+  }
+};
+
+
+
+
+export { registerUser, loginUser, refreshAccessToken, forgotPassword, resetPassword, verifyEmail, logoutUser};
