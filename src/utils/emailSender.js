@@ -87,4 +87,4 @@ const sendInstructorPaymentRefundEmail = async (email, name, courseName) => {
 
 
 
-export { sendWelcomeEmail, sendPasswordResetEmail, sendEmailVerificationEmail, sendPaymentSuccessEmail, sendPaymentFailureEmail };
+    export { sendWelcomeEmail, sendPasswordResetEmail, sendEmailVerificationEmail, sendPaymentSuccessEmail, sendPaymentFailureEmail, sendInstructorPaymentSuccessEmail, sendInstructorPaymentFailureEmail, sendInstructorPaymentPendingEmail, sendInstructorPaymentRefundEmail };
